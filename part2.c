@@ -17,7 +17,6 @@ uint64_t hexchar2val(char in[])
 	const uint8_t shift = (letter >> 3) | (letter >> 6);
 
 	result = (result << 4) | ((in[i] + shift) & 0xf) ;
-	//printf("%1d\n",result) ;
 
 	i++ ;
     }
