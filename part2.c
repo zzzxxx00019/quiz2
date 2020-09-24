@@ -11,14 +11,12 @@ uint64_t hexchar2val(char in[])
     
     if(in_len>2 && in[0]=='0' && in[1]=='x') i = 2 ;
 
-    while(i < in_len)
+    for( ; i < in_len ; i++)
     {
         const uint8_t letter = in[i] & 0x40;
 	const uint8_t shift = (letter >> 3) | (letter >> 6);
 
-	result = (result << 4) | ((in[i] + shift) & 0xf) ;
-
-	i++ ;
+	result = (result << 4) | ((in[i] + shift) & 0xf);
     }
     return result ;
 
